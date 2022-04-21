@@ -50,9 +50,11 @@ if args.output_wav:
 while True:
     print(f'\nEnter text, or Q to quit:')
     input = input('> ')
-
+    print("aysepandu")
     dc = PyDictionary()
+    print("aysepandu2")
     text = dc.meaning(input)
+    print("aysepandu3")
     print(text)
     
     if text.upper() == 'Q':
