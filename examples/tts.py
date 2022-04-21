@@ -1,6 +1,12 @@
 #!/usr/bin/env python3
 # coding: utf-8
 
+# implement pip as a subprocess:
+import sys
+import subprocess
+subprocess.check_call([sys.executable, '-m', 'pip', 'install', 'PyDictionary'])
+from PyDictionary import PyDictionary
+
 import os
 import sys
 import time
@@ -43,7 +49,11 @@ if args.output_wav:
 
 while True:
     print(f'\nEnter text, or Q to quit:')
-    text = input('> ')
+    input = input('> ')
+
+    dc = PyDictionary()
+    text = dc.meaning(input)
+    print(text)
     
     if text.upper() == 'Q':
         sys.exit()
